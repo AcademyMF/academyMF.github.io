@@ -11,7 +11,7 @@
             --color-fondo: #fdfdfd;
             --color-texto: #1a1a1a;
             --color-texto-suave: #4a4a4a;
-            --color-acento: #6C2521; /* Cambiad esto por el color de vuestro logo */
+            --color-acento: #BB403A; /* Cambiad esto por el color de vuestro logo */
             --radio-bordes: 12px;
         }
 
@@ -23,18 +23,81 @@
         nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
         .logo-img { height: 50px; /* Ajusta según el tamaño de vuestro logo */ }
 
-        /* 1. ATENCIÓN (Hero Section con Banner) */
+        /* 1. ATENCIÓN (Hero Section Tipográfico y Minimalista) */
         .hero { 
             text-align: center; 
-            padding: 80px 0; 
-            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/banner.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: var(--radio-bordes);
-            margin-top: 20px;
+            padding: 120px 0 100px; /* Mucho espacio en blanco para dar sensación de limpieza */
+            max-width: 850px;
+            margin: 0 auto; /* Centra el bloque en la pantalla */
         }
-        .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
-        .hero p { font-size: 1.2rem; color: var(--color-texto-suave); max-width: 600px; margin: 0 auto 30px auto; }
+        
+        /* La "píldora" superior (Eyebrow text) para darle un toque moderno */
+        .hero-tag {
+            display: inline-block;
+            background: rgba(0, 85, 255, 0.08); /* Fondo casi transparente */
+            color: var(--color-acento);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Tipografía masiva y apretada */
+        .hero h1 { 
+            font-size: 4.2rem; 
+            font-weight: 800; 
+            line-height: 1.05; 
+            margin-bottom: 25px; 
+            letter-spacing: -2px; /* Junta un poco las letras, truco de diseñador */
+            color: var(--color-texto);
+        }
+        
+        /* Pintamos una parte del título con el color de acento */
+        .hero h1 span {
+            color: var(--color-acento);
+        }
+
+        .hero p { 
+            font-size: 1.25rem; 
+            color: var(--color-texto-suave); 
+            max-width: 600px; 
+            margin: 0 auto 40px auto; 
+        }
+
+        /* Agrupamos botones */
+        .hero-botones {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        /* Creamos un botón secundario "invisible" */
+        .btn-secundario {
+            display: inline-block; 
+            background: transparent; 
+            color: var(--color-texto); 
+            padding: 15px 30px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 1.1rem;
+            border: 2px solid #eaeaea;
+            transition: all 0.2s;
+        }
+        .btn-secundario:hover {
+            border-color: var(--color-texto);
+            transform: translateY(-3px);
+        }
+
+        /* Ajuste para que se vea bien en móviles */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; letter-spacing: -1px; }
+            .hero { padding: 80px 0 60px; }
+            .hero-botones { flex-direction: column; }
+        }
         
         /* Botón de Acción Principal */
         .btn { 
@@ -71,16 +134,22 @@
     <div class="container">
         
         <nav>
-            <img src="assets/logo.png" alt="Logo AcademyMF" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <h2 style="display:none; font-weight: 800;">AcademyMF</h2>
+            <img src="assets/logo.png" alt="Logo AcademyMF" style="height: 50px;">
             
             <a href="#cursos" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">Acceder</a>
         </nav>
 
         <header class="hero">
-            <h1>Domina la materia sin perder el tiempo.</h1>
+            <div class="hero-tag">✨ La nueva forma de aprender</div>
+            
+            <h1>Domina la materia <span>sin perder el tiempo.</span></h1>
+            
             <p>Ve directo al grano con contenido práctico, explicaciones claras y recursos que realmente puedes aplicar desde el primer minuto.</p>
-            <a href="#empezar" class="btn">Empieza a aprender hoy</a>
+            
+            <div class="hero-botones">
+                <a href="#empezar" class="btn">Empezar a aprender</a>
+                <a href="#metodo" class="btn-secundario">Ver metodología</a>
+            </div>
         </header>
 
         <section class="interes">
