@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcademyMF | Aprende a tu ritmo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* CONFIGURACIÓN BASE (Fácil de editar) */
+        :root {
+            --color-fondo: #fdfdfd;
+            --color-texto: #1a1a1a;
+            --color-texto-suave: #4a4a4a;
+            --color-acento: #0055ff; /* Cambiad esto por el color de vuestro logo */
+            --radio-bordes: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--color-fondo); color: var(--color-texto); line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        /* BARRA DE NAVEGACIÓN Y LOGO */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+        .logo-img { height: 50px; /* Ajusta según el tamaño de vuestro logo */ }
+
+        /* 1. ATENCIÓN (Hero Section con Banner) */
+        .hero { 
+            text-align: center; 
+            padding: 80px 0; 
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radio-bordes);
+            margin-top: 20px;
+        }
+        .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero p { font-size: 1.2rem; color: var(--color-texto-suave); max-width: 600px; margin: 0 auto 30px auto; }
+        
+        /* Botón de Acción Principal */
+        .btn { 
+            display: inline-block; 
+            background: var(--color-acento); 
+            color: white; 
+            padding: 15px 30px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 85, 255, 0.2); }
+
+        /* 2. INTERÉS (Problema / Solución) */
+        .interes { padding: 80px 0; text-align: center; }
+        .interes h2 { font-size: 2rem; margin-bottom: 40px; }
+        .grid-beneficios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .beneficio-card { padding: 30px; background: white; border: 1px solid #eaeaea; border-radius: var(--radio-bordes); }
+        .beneficio-card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--color-acento); }
+
+        /* 3. DESEO (Prueba de lo que ofreces) */
+        .deseo { background: #f5f7fa; padding: 80px 0; border-radius: var(--radio-bordes); text-align: center; }
+        .deseo h2 { font-size: 2rem; margin-bottom: 20px; }
+        .deseo p { font-size: 1.1rem; max-width: 600px; margin: 0 auto 40px; color: var(--color-texto-suave); }
+
+        /* 4. ACCIÓN Y FOOTER */
+        footer { padding: 60px 0 30px; text-align: center; margin-top: 40px; border-top: 1px solid #eaeaea; }
+        .licencia { font-size: 0.85rem; color: #888; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <nav>
+            <img src="assets/logo.png" alt="Logo AcademyMF" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <h2 style="display:none; font-weight: 800;">AcademyMF</h2>
+            
+            <a href="#cursos" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">Acceder</a>
+        </nav>
+
+        <header class="hero">
+            <h1>Domina la materia sin perder el tiempo.</h1>
+            <p>Ve directo al grano con contenido práctico, explicaciones claras y recursos que realmente puedes aplicar desde el primer minuto.</p>
+            <a href="#empezar" class="btn">Empieza a aprender hoy</a>
+        </header>
+
+        <section class="interes">
+            <h2>Aprender no debería ser frustrante</h2>
+            <div class="grid-beneficios">
+                <div class="beneficio-card">
+                    <h3>Directo al grano</h3>
+                    <p>Olvídate de la teoría de relleno. Diseñamos cada clase para maximizar tu tiempo de aprendizaje y evitar la confusión.</p>
+                </div>
+                <div class="beneficio-card">
+                    <h3>Apuntes de calidad</h3>
+                    <p>No tienes que tomar notas desesperadamente. Te damos esquemas, resúmenes y material listo para consultar.</p>
+                </div>
+                <div class="beneficio-card">
+                    <h3>Para todos los niveles</h3>
+                    <p>Desde los conceptos más básicos hasta las técnicas avanzadas, explicadas paso a paso para que no te pierdas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="deseo">
+            <h2>Todo lo que necesitas en un solo lugar</h2>
+            <p>Imagina tener acceso a una biblioteca de recursos diseñada específicamente para que superes tus obstáculos más rápido.</p>
+            <div class="grid-beneficios">
+                <div class="beneficio-card" style="border: none;">
+                    <h3>📺 Clases en Vídeo</h3>
+                    <p>Explicaciones visuales y resolución de casos reales.</p>
+                </div>
+                <div class="beneficio-card" style="border: none;">
+                    <h3>✍️ Blog y Artículos</h3>
+                    <p>Lecturas rápidas con tips y metodologías de estudio.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h2 style="margin-bottom: 20px;">¿Listo para dar el siguiente paso?</h2>
+            <a href="mailto:hola@academymf.com" class="btn">Contacta con nosotros</a>
+            
+            <p class="licencia">
+                <strong>© 2026 AcademyMF</strong><br>
+                El contenido educativo de esta web está bajo licencia Creative Commons (CC BY-NC-ND 4.0).<br>
+                Código fuente bajo licencia MIT.
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>
