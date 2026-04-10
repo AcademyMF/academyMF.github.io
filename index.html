@@ -21,7 +21,24 @@
         
         /* BARRA DE NAVEGACIÓN Y LOGO */
         nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
-        .logo-img { height: 50px; /* Ajusta según el tamaño de vuestro logo */ }
+        
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px; /* Espacio entre el dibujo y las letras */
+        }
+        
+        .brand-container img {
+            height: 40px; /* Ajusta el tamaño de tu imagen aquí */
+            border-radius: 8px; /* Por si quieres bordes redondeados en la imagen */
+        }
+        
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--color-texto);
+            letter-spacing: -0.5px;
+        }
 
         /* 1. ATENCIÓN (Hero Section Tipográfico y Minimalista) */
         .hero { 
@@ -134,7 +151,10 @@
     <div class="container">
         
         <nav>
-            <img src="assets/logo.png" alt="Logo AcademyMF" style="height: 50px;">
+            <div class="brand-container">
+                <img src="assets/TU_ARCHIVO_REAL" alt="Icono AcademyMF">
+                <span class="brand-name">AcademyMF</span>
+            </div>
             
             <a href="#cursos" class="btn" style="padding: 10px 20px; font-size: 0.9rem;">Acceder</a>
         </nav>
